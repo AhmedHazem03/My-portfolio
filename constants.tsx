@@ -7,7 +7,7 @@ export const PERSONAL_INFO = {
   location: "Sohag, Egypt",
   phone: "+20-1068298970",
   email: "mailto:div.ahmedhazam@gmail.com",
-  profilePic: "https://github.com/AhmedHazem03.png",
+  profilePic: "https://avatars.githubusercontent.com/u/268745089?v=4",
   summary: "I am a results-oriented Software Engineer specializing in scalable full-stack systems. With a strong competitive programming foundation, I bring sharp algorithmic thinking to every project. Currently at Xfuse, I bridge powerful .NET backends with dynamic Next.js frontends to deliver production-grade platforms across the Educational, E-commerce, and Medical sectors.",
   socials: {    
     github: "https://github.com/AhmedHazem03",
