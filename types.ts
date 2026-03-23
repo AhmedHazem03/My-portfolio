@@ -5,7 +5,7 @@ export interface Project {
   description: string;
   techStack: string[];
   link?: string;
-  type: 'API' | 'MVC' | 'Console' | 'System';
+  type: 'API' | 'MVC' | 'Console' | 'System' | 'Website';
 }
 
 export interface Experience {

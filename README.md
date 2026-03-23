@@ -81,9 +81,9 @@ All personal data is located in `constants.tsx`. To adapt this portfolio for you
 ## 👨‍💻 Author
 
 **Ahmed Hazem**
-*   **Role:** Back-End Developer (.NET)
+*   **Role:** Software Engineer
 *   **Current Company:** Xfuse
-*   **Location:** Cairo, Egypt
+*   **Location:** Sohag, Egypt
 
 ### Connect
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmed-hazem-84912722a/)

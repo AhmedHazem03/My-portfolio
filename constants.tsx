@@ -19,15 +19,15 @@ import {
 
 export const PERSONAL_INFO = {
   name: "Ahmed Hazem",
-  title: "Backend Developer",
+  title: "Software Engineer",
   location: "Sohag, Egypt",
   phone: "+20-1068298970",
   email: "mailto:div.ahmedhazam@gmail.com",
-  profilePic: "https://github.com/AhmedHazem02.png",
-  summary: "Backend Developer specializing in .NET technologies and scalable architecture. Delivered production-ready platforms, including high-traffic e-commerce engines and digital medical systems. Optimized MSSQL database performance by 30% and integrated secure payment gateways. Committed to writing clean, testable code and driving technical solutions in Agile environments.",
-  socials: {
-    github: "https://github.com/AhmedHazem02",
-    linkedin: "https://www.linkedin.com/in/ahmed-hazem-84912722a/",
+  profilePic: "https://github.com/AhmedHazem03.png",
+  summary: "I am a results-oriented Software Engineer specializing in scalable full-stack systems. With a strong competitive programming foundation, I bring sharp algorithmic thinking to every project. Currently at Xfuse, I bridge powerful .NET backends with dynamic Next.js frontends to deliver production-grade platforms across the Educational, E-commerce, and Medical sectors.",
+  socials: {    
+    github: "https://github.com/AhmedHazem03",
+    linkedin: "https://www.linkedin.com/in/ahmed-hazem-235953369/",
     email: "mailto:div.ahmedhazam@gmail.com",
     codeforces: "https://codeforces.com/profile/A.Hazem_2003",
     leetcode: "https://leetcode.com/u/A_Hazem-2003/",
@@ -51,6 +51,22 @@ export const WORK_EXPERIENCE: Experience[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    title: "Elite International School Digital Platform",
+    period: "Feb 3, 2026 – Feb 10, 2026",
+    description: "Architected and developed a comprehensive full-stack educational platform. Built a premium user interface using Next.js 15 (App Router), TypeScript, and Framer Motion for cinematic micro-interactions, complete with Dark/Light modes and a glassmorphic design. Integrated Supabase (PostgreSQL, Auth, Storage) for robust backend operations, handling real-time admissions and content management. Engineered a dynamic Admin Dashboard with bilingual (Arabic/English RTL) capabilities, optimized with ISR caching and JSON-LD schemas for peak SEO performance.",
+    techStack: ["Next.js 15", "TypeScript", "Supabase", "Framer Motion", "ISR/SEO"],
+    type: "Website",
+    link: "https://www.eliteinternationale.com/ar"
+  },
+  {
+    title: "Agency OS & Web Presence (Marketing DEX)",
+    period: "Jan 22, 2026 – Mar 10, 2026",
+    description: "Built a production-ready Agency Operating System integrating a Kanban Task Management board, Treasury System with automated financial reports, and a Client Portal for streamlined feedback. Developed custom Department Workflows, real-time chat powered by WebSockets, and a robust Admin CMS. Ensured enterprise-level security with Row-Level Security (RLS) on every table and Role-Based Access Control (RBAC) accommodating 10 distinct roles. Fully bilingual (Arabic/English RTL), optimized for 15,000+ concurrent users, and deployed on Vercel's Edge Network.",
+    techStack: ["System Architecture", "WebSockets", "Row-Level Security", "RBAC", "Vercel"],
+    type: "System",
+    link: "https://www.dex-adv-agency.com/ar"
+  },
   {
     title: "MakaStore – Production-Ready E-Commerce",
     period: "Oct 2025 – Nov 2025",
@@ -152,61 +168,61 @@ export const LANGUAGES = [
 export const SKILLS: SkillCategory[] = [
   {
     name: "Languages",
-    skills: ["C#", "C++", "Python", "SQL"]
+    skills: ["C#", "TypeScript", "C++", "Python", "SQL"]
   },
   {
     name: "Frameworks",
-    skills: [".NET Core", "ASP.NET Web API", "Entity Framework (EF)", "MVC", "LINQ"]
+    skills: [".NET Core", "ASP.NET Web API", "Next.js", "React", "Entity Framework (EF)", "MVC", "LINQ"]
   },
   {
     name: "Databases",
-    skills: ["MSSQL", "Redis", "Firestore"]
+    skills: ["MSSQL", "Supabase", "Redis", "Firestore"]
   },
   {
     name: "Concepts",
-    skills: ["OOP", "Data Structures", "Algorithms", "SOLID Principles", "Clean Architecture", "CQRS", "Repository Pattern", "Dependency Injection"]
+    skills: ["Clean Architecture", "CQRS", "SOLID Principles", "OOP", "Data Structures", "Algorithms", "RBAC"]
   },
   {
     name: "Tools",
-    skills: ["Git", "GitHub", "Docker", "Postman", "Firebase"]
+    skills: ["Git", "GitHub", "Docker", "Postman", "Firebase", "Cloudflare R2", "TanStack Query"]
   }
 ];
 
 export const SERVICES: Service[] = [
   {
-    title: ".NET Web API Development",
-    description: "Building robust, scalable RESTful APIs using ASP.NET Core and secure authentication methods.",
-    features: ["RESTful API Design", "JWT & Identity Security", "Dependency Injection", "Token Management"],
-    icon: "Server"
-  },
-  {
-    title: "System Architecture",
-    description: "Designing maintainable systems using modern architectural patterns and best practices.",
-    features: ["Clean Architecture", "CQRS Pattern", "Repository Pattern", "Design Patterns"],
-    icon: "Workflow"
-  },
-  {
-    title: "Database Engineering",
-    description: "Designing and optimizing relational databases for performance and data integrity.",
-    features: ["MSSQL Server", "Entity Framework Core", "LINQ Optimization", "Database Modeling"],
-    icon: "Database"
-  },
-  {
-    title: "MVC Web Applications",
-    description: "Developing full-stack web applications with server-side rendering and responsive UIs.",
-    features: ["ASP.NET Core MVC", "HTML5 & CSS3", "Bootstrap UI", "Server-Side Validation"],
+    title: "Full-Stack System Engineering",
+    description: "Bridging powerful .NET backends with dynamic Next.js frontends to deliver production-grade platforms.",
+    features: ["Next.js (App Router)", "ASP.NET Core", "Clean Architecture", "TypeScript & C#"],
     icon: "Layout"
   },
   {
-    title: "Technical Mentorship",
-    description: "Leading development sessions and guiding students in backend technologies.",
-    features: ["Backend Roadmaps", "Project Architecture Guidance", "Code Reviews", "Tech Workshops"],
-    icon: "Cpu"
+    title: "Backend & API Development",
+    description: "Building robust, scalable RESTful APIs with secure authentication and real-time capabilities.",
+    features: ["RESTful API Design", "WebSockets / Real-time", "JWT & RBAC Security", "High-traffic Optimization"],
+    icon: "Server"
+  },
+  {
+    title: "Database Architecture",
+    description: "Designing and optimizing distributed databases for performance, security, and data integrity.",
+    features: ["PostgreSQL (Supabase)", "MSSQL Server", "Row-Level Security (RLS)", "Redis Caching"],
+    icon: "Database"
+  },
+  {
+    title: "Modern UI/UX Development",
+    description: "Creating premium, highly interactive, and responsive user interfaces with cinematic micro-interactions.",
+    features: ["React & Framer Motion", "Tailwind CSS", "Dark/Light Modes", "Bilingual Support (i18n)"],
+    icon: "Globe"
+  },
+  {
+    title: "System Architecture & Security",
+    description: "Designing maintainable enterprise systems using modern architectural patterns and best practices.",
+    features: ["CQRS Pattern", "SOLID Principles", "Microservices Concepts", "Server-Side Validation"],
+    icon: "Workflow"
   },
   {
     title: "Algorithmic Problem Solving",
-    description: "Applying advanced data structures and algorithms to solve complex logic challenges.",
-    features: ["Data Structures", "Algorithms", "C++ & Python", "Performance Optimization"],
+    description: "Applying sharp algorithmic thinking and advanced data structures to solve complex logic challenges.",
+    features: ["Competitive Programming", "Data Structures", "Algorithms", "Performance Optimization"],
     icon: "Zap"
   }
 ];
