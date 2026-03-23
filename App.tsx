@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Hero3D from './components/Hero3D';
 import { ProjectCard } from './components/ProjectCard';
@@ -63,15 +63,17 @@ function App() {
 
   // Merge and sort experience for Git Graph (Visual Timeline)
   // Note: This is for the interactive timeline. The Resume.md tab follows strict ATS order.
-  const sortedExperience = [...WORK_EXPERIENCE, ...VOLUNTEERING, ...EDUCATION, ...CERTIFICATIONS, ...ACHIEVEMENTS].sort((a, b) => {
+  const sortedExperience = useMemo(() => {
     const getYear = (period: string) => {
       // Extract year from "Month YYYY" or "YYYY"
       const match = period.match(/\d{4}/);
       return match ? parseInt(match[0]) : 0;
     };
-    // Sort descending (newest first)
-    return getYear(b.period) - getYear(a.period);
-  });
+    return [...WORK_EXPERIENCE, ...VOLUNTEERING, ...EDUCATION, ...CERTIFICATIONS, ...ACHIEVEMENTS].sort((a, b) =>
+      // Sort descending (newest first)
+      getYear(b.period) - getYear(a.period)
+    );
+  }, []);
 
   const filteredProjects = PROJECTS.filter(p => 
     p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -147,10 +149,10 @@ function App() {
           <button onClick={() => { setActiveSection('search'); setSidebarOpen(true); }} className={`p-2 rounded-md transition-colors ${activeSection === 'search' && isSidebarOpen ? 'text-white border-l-2 border-white' : 'text-[#858585] hover:text-white'}`}>
             <Search size={24} strokeWidth={1.5} />
           </button>
-          <button onClick={() => { setActiveSection('git'); handleOpenSection('Experience'); }} className={`p-2 rounded-md transition-colors ${activeSection === 'git' ? 'text-white border-l-2 border-white' : 'text-[#858585] hover:text-white'}`}>
+          <button onClick={() => { setActiveSection('git'); setSidebarOpen(true); handleOpenSection('Experience'); }} className={`p-2 rounded-md transition-colors ${activeSection === 'git' && isSidebarOpen ? 'text-white border-l-2 border-white' : 'text-[#858585] hover:text-white'}`}>
             <GitGraph size={24} strokeWidth={1.5} />
           </button>
-          <button onClick={() => { setActiveSection('extensions'); handleOpenSection('Skills'); }} className={`p-2 rounded-md transition-colors ${activeSection === 'extensions' ? 'text-white border-l-2 border-white' : 'text-[#858585] hover:text-white'}`}>
+          <button onClick={() => { setActiveSection('extensions'); setSidebarOpen(true); handleOpenSection('Skills'); }} className={`p-2 rounded-md transition-colors ${activeSection === 'extensions' && isSidebarOpen ? 'text-white border-l-2 border-white' : 'text-[#858585] hover:text-white'}`}>
             <Cpu size={24} strokeWidth={1.5} />
           </button>
           
@@ -625,8 +627,9 @@ function App() {
                                 {sortedExperience.map((item, index) => {
                                     const isWork = item.type === 'Work';
                                     const isEdu = item.type === 'Education' || item.type === 'Certificate';
-                                    const color = isWork ? '#2ecc71' : isEdu ? '#9b59b6' : '#3498db';
-                                    const Icon = isWork ? Briefcase : isEdu ? GraduationCap : Heart;
+                                    const isAchievement = item.type === 'Achievement';
+                                    const color = isWork ? '#2ecc71' : isEdu ? '#9b59b6' : isAchievement ? '#f1c40f' : '#3498db';
+                                    const Icon = isWork ? Briefcase : isEdu ? GraduationCap : isAchievement ? Award : Heart;
 
                                     return (
                                         <motion.div 
@@ -732,7 +735,7 @@ function App() {
                                                                 </div>
                                                                 <div className="text-xs text-[#cccccc] mb-2">Proficiency Level</div>
                                                                 <div className="h-1.5 w-full bg-[#333333] rounded-full overflow-hidden">
-                                                                    <div className="h-full bg-[#007acc]" style={{width: `${Math.random() * 20 + 80}%`}}></div>
+                                                                    <div className="h-full bg-[#007acc]" style={{width: `${(skill.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0) % 20) + 80}%`}}></div>
                                                                 </div>
                                                             </div>
                                                         </div>

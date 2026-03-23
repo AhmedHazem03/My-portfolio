@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* ── Tailwind v4 custom theme tokens ────────────────── */
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  --color-primary:   #38bdf8;
+  --color-secondary: #818cf8;
+  --color-accent:    #2dd4bf;
+  --color-dark:      #0B1120;
+  --color-editor:    #1e1e1e;
+  --color-panel:     #252526;
+  --color-border:    #333333;
+
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+}
+
+/* ── Global overrides ───────────────────────────────── */
+body {
+  background-color: #0B1120;
+  color: #e2e8f0;
+  overflow: hidden;
+}
+
+/* ── Scrollbar (IDE look) ───────────────────────────── */
+::-webkit-scrollbar        { width: 10px; height: 10px; }
+::-webkit-scrollbar-track  { background: #1e1e1e; }
+::-webkit-scrollbar-thumb  { background: #424242; border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: #4f4f4f; }
+
+/* ── Glassmorphism panel ────────────────────────────── */
+.glass-panel {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ── Tab content fade-in ────────────────────────────── */
+@keyframes tabFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.tab-content-enter {
+  animation: tabFadeIn 0.2s ease-out forwards;
+}
+
+/* ── Project card title (2-line clamp) ──────────────── */
+.project-card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal !important;
+}
+
+/* ── Scrollbar hide utility ──────────────────────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}

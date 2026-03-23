@@ -1,34 +1,21 @@
-
+/// <reference types="@react-three/fiber" />
 import React, { useRef, useMemo, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Define intrinsic elements to satisfy TS and avoid issues with implicit types
-const Group = 'group' as any;
-const Mesh = 'mesh' as any;
-const MeshBasicMaterial = 'meshBasicMaterial' as any;
-const IcosahedronGeometry = 'icosahedronGeometry' as any;
-const Fog = 'fog' as any;
-const AmbientLight = 'ambientLight' as any;
-const PointLight = 'pointLight' as any;
-const LineSegments = 'lineSegments' as any;
-const BufferGeometry = 'bufferGeometry' as any;
-const BufferAttribute = 'bufferAttribute' as any;
-const LineBasicMaterial = 'lineBasicMaterial' as any;
-
 const NetworkNode: React.FC<{ position: [number, number, number], color: string }> = ({ position, color }) => {
   return (
-    <Group position={position}>
-      <Mesh>
-        <IcosahedronGeometry args={[0.2, 0]} />
-        <MeshBasicMaterial color={color} wireframe transparent opacity={0.3} />
-      </Mesh>
-      <Mesh>
-        <IcosahedronGeometry args={[0.05, 0]} />
-        <MeshBasicMaterial color="white" />
-      </Mesh>
-    </Group>
+    <group position={position}>
+      <mesh>
+        <icosahedronGeometry args={[0.2, 0]} />
+        <meshBasicMaterial color={color} wireframe transparent opacity={0.3} />
+      </mesh>
+      <mesh>
+        <icosahedronGeometry args={[0.05, 0]} />
+        <meshBasicMaterial color="white" />
+      </mesh>
+    </group>
   );
 };
 
@@ -76,15 +63,15 @@ const AnimationScene = () => {
 
     return (
         <>
-            <Fog attach="fog" args={['#0B1120', 5, 20]} />
-            <AmbientLight intensity={0.5} />
+            <fog attach="fog" args={['#0B1120', 5, 20]} />
+            <ambientLight intensity={0.5} />
             
-            <Group ref={groupRef}>
+            <group ref={groupRef}>
                 {/* Core System */}
-                <Mesh>
-                    <IcosahedronGeometry args={[2, 1]} />
-                    <MeshBasicMaterial color="#38bdf8" wireframe transparent opacity={0.05} />
-                </Mesh>
+                <mesh>
+                    <icosahedronGeometry args={[2, 1]} />
+                    <meshBasicMaterial color="#38bdf8" wireframe transparent opacity={0.05} />
+                </mesh>
                 
                 {/* Distributed Nodes */}
                 {points.map((pos, i) => (
@@ -92,23 +79,23 @@ const AnimationScene = () => {
                 ))}
 
                 {/* Connections */}
-                <LineSegments>
-                    <BufferGeometry>
-                        <BufferAttribute
+                <lineSegments>
+                    <bufferGeometry>
+                        <bufferAttribute
                             attach="attributes-position"
                             count={linePositions.length / 3}
                             array={linePositions}
                             itemSize={3}
                         />
-                    </BufferGeometry>
-                    <LineBasicMaterial color="#2dd4bf" transparent opacity={0.15} />
-                </LineSegments>
-            </Group>
+                    </bufferGeometry>
+                    <lineBasicMaterial color="#2dd4bf" transparent opacity={0.15} />
+                </lineSegments>
+            </group>
             
             <Stars radius={100} depth={50} count={3000} factor={4} saturation={0} fade speed={0.5} />
             
-            <PointLight position={[10, 10, 10]} intensity={1.5} color="#38bdf8" distance={30} />
-            <PointLight position={[-10, -5, -10]} intensity={1} color="#818cf8" distance={30} />
+            <pointLight position={[10, 10, 10]} intensity={1.5} color="#38bdf8" distance={30} />
+            <pointLight position={[-10, -5, -10]} intensity={1} color="#818cf8" distance={30} />
         </>
     );
 };

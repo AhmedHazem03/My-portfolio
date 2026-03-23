@@ -1,21 +1,5 @@
 
 import { Project, Experience, SkillCategory, Service } from './types';
-import { 
-  Github, 
-  Linkedin, 
-  Code, 
-  Terminal, 
-  Database, 
-  Server, 
-  Cpu, 
-  Globe,
-  Mail,
-  Phone,
-  Zap,
-  Shield,
-  Layout,
-  Workflow
-} from 'lucide-react';
 
 export const PERSONAL_INFO = {
   name: "Ahmed Hazem",
@@ -155,7 +139,7 @@ export const ACHIEVEMENTS: Experience[] = [
     company: "Coach Academy",
     role: "Competitive Programming Training Level 3",
     period: "May 2023 – Feb 2024",
-    type: "Certificate",
+    type: "Achievement",
     link: "https://drive.google.com/file/d/1DYJZQgJAoz6sT8Vy0FZxsje-Cu3_Ohz9/view?pli=1"
   }
 ];

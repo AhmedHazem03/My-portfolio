@@ -13,7 +13,7 @@ export interface Experience {
   company: string;
   period: string;
   description?: string[];
-  type: 'Education' | 'Volunteering' | 'Certificate' | 'Work';
+  type: 'Education' | 'Volunteering' | 'Certificate' | 'Work' | 'Achievement';
   link?: string;
 }
 

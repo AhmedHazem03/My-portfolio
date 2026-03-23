@@ -22,6 +22,7 @@ export const ProjectCard: React.FC<Props> = ({ project, onClick }) => {
       case 'System': return <Server className="w-4 h-4 text-[#38bdf8]" />;
       case 'API': return <Database className="w-4 h-4 text-[#569cd6]" />;
       case 'MVC': return <Layout className="w-4 h-4 text-[#dcdcaa]" />;
+      case 'Website': return <Globe className="w-4 h-4 text-[#2ecc71]" />;
       case 'Console': return <Terminal className="w-4 h-4 text-[#ce9178]" />;
       default: return <GitBranch className="w-4 h-4 text-gray-400" />;
     }
@@ -72,6 +73,30 @@ export const ProjectCard: React.FC<Props> = ({ project, onClick }) => {
 
   // Helper to generate an array of JSX lines for perfect alignment with refined C# Highlighting
   const getCodeLines = () => {
+    if (project.type === 'Website') {
+      return [
+        <span key="1"><span className="text-[#c586c0]">import</span> <span className="text-[#4ec9b0]">type</span> <span className="text-[#d4d4d4]">{'{'} Metadata {'}'}</span> <span className="text-[#c586c0]">from</span> <span className="text-[#ce9178]">"next"</span></span>,
+        <span key="2"><span className="text-[#c586c0]">import</span> <span className="text-[#d4d4d4]">{'{'} Suspense {'}'}</span> <span className="text-[#c586c0]">from</span> <span className="text-[#ce9178]">"react"</span></span>,
+        <span key="3"> </span>,
+        <span key="4"><span className="text-[#c586c0]">export const</span> <span className="text-[#9cdcfe]">metadata</span><span className="text-[#d4d4d4]">:</span> <span className="text-[#4ec9b0]">Metadata</span> <span className="text-[#d4d4d4]">= {'{'}</span></span>,
+        <span key="5">  <span className="text-[#9cdcfe]">title</span><span className="text-[#d4d4d4]">:</span> <span className="text-[#ce9178]">"<br />{project.title.substring(0, 20)}..."</span><span className="text-[#d4d4d4]">,</span></span>,
+        <span key="6">  <span className="text-[#9cdcfe]">description</span><span className="text-[#d4d4d4]">:</span> <span className="text-[#ce9178]">"Production-grade platform"</span><span className="text-[#d4d4d4]">,</span></span>,
+        <span key="7"><span className="text-[#d4d4d4]">{'}'}</span></span>,
+        <span key="8"> </span>,
+        <span key="9"><span className="text-[#c586c0]">export default async function</span> <span className="text-[#dcdcaa]">Page</span><span className="text-[#d4d4d4]">()</span> <span className="text-[#d4d4d4]">{'{'}</span></span>,
+        <span key="10">  <span className="text-[#569cd6]">const</span> <span className="text-[#9cdcfe]">data</span> <span className="text-[#d4d4d4]">=</span> <span className="text-[#c586c0]">await</span> <span className="text-[#dcdcaa]">fetchData</span><span className="text-[#d4d4d4]">();</span></span>,
+        <span key="11"> </span>,
+        <span key="12">  <span className="text-[#c586c0]">return</span> <span className="text-[#d4d4d4]">(</span></span>,
+        <span key="13">    <span className="text-[#4ec9b0]">&lt;Suspense</span> <span className="text-[#9cdcfe]">fallback</span><span className="text-[#d4d4d4]">={'{'}null{'}'}</span><span className="text-[#4ec9b0]">&gt;</span></span>,
+        <span key="14">      <span className="text-[#4ec9b0]">&lt;main</span> <span className="text-[#9cdcfe]">className</span><span className="text-[#d4d4d4]">=</span><span className="text-[#ce9178]">"min-h-screen"</span><span className="text-[#4ec9b0]">&gt;</span></span>,
+        <span key="15">        <span className="text-[#6a9955]">{'/* '}{project.title.substring(0,18)}{'... */'}</span></span>,
+        <span key="16">      <span className="text-[#4ec9b0]">&lt;/main&gt;</span></span>,
+        <span key="17">    <span className="text-[#4ec9b0]">&lt;/Suspense&gt;</span></span>,
+        <span key="18">  <span className="text-[#d4d4d4]">)</span></span>,
+        <span key="19"><span className="text-[#d4d4d4]">{'}'}</span></span>,
+      ];
+    }
+
     if (project.type === 'API' || project.type === 'System') {
       return [
         <span key="1"><span className="text-[#c586c0]">using</span> <span className="text-[#d4d4d4]">Microsoft.AspNetCore.Mvc;</span></span>,
