@@ -301,7 +301,7 @@ function App() {
                     <Hero3D />
                 </div>
 
-                <div className="absolute inset-0 overflow-y-auto custom-scrollbar p-4 md:p-6 z-10">
+                <div key={activeTab} className="absolute inset-0 overflow-y-auto custom-scrollbar p-4 md:p-6 z-10 tab-content-enter">
                     
                     {/* PROFILE TAB */}
                     {activeTab === 'Profile' && (

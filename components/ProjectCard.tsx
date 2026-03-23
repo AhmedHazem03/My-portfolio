@@ -178,10 +178,10 @@ export const ProjectCard: React.FC<Props> = ({ project, onClick }) => {
       className={`group relative h-full w-full rounded-md border border-[#333333] bg-[#1e1e1e] overflow-hidden flex flex-col shadow-lg hover:shadow-2xl hover:border-[#007acc]/50 transition-all ${onClick ? 'cursor-pointer' : ''}`}
     >
       {/* Card Header & Tabs */}
-      <div className="flex items-center justify-between px-3 py-2 border-b border-[#252526] bg-[#252526]">
-         <div className="flex items-center gap-2 max-w-[50%]">
-            {getIcon()}
-            <span className="font-mono text-xs text-[#cccccc] font-medium truncate">
+      <div className="flex items-center justify-between px-3 py-2 border-b border-[#252526] bg-[#252526] gap-2">
+         <div className="flex items-start gap-2 min-w-0 flex-1">
+            <span className="mt-0.5 flex-shrink-0">{getIcon()}</span>
+            <span className="font-mono text-xs text-[#cccccc] font-medium project-card-title leading-tight">
                 {project.title}
             </span>
          </div>
