@@ -300,7 +300,8 @@ function App() {
                 <div className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${activeTab === 'Profile' ? 'opacity-100' : 'opacity-20'}`}>
                     <Hero3D />
                 </div>
-
+               
+               
                 <div key={activeTab} className="absolute inset-0 overflow-y-auto custom-scrollbar p-4 md:p-6 z-10 tab-content-enter">
                     
                     {/* PROFILE TAB */}
