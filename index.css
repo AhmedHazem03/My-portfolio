@@ -4,17 +4,31 @@
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'Fira Code', monospace;
 
-  --color-primary: #38bdf8;
-  --color-secondary: #818cf8;
-  --color-accent: #2dd4bf;
+  --color-primary: #2563EB;
+  --color-primary-hover: #1D4ED8;
+  --color-accent: #7DD3FC;
+  --color-success: #34D399;
   --color-dark: #0B1120;
-  --color-editor: #1e1e1e;
-  --color-panel: #252526;
-  --color-border: #333333;
+  --color-editor: #111827;
+  --color-panel: #162033;
+  --color-border: #334155;
+}
+
+:root {
+  --portfolio-bg: #0B1120;
+  --portfolio-surface: #111827;
+  --portfolio-surface-elevated: #162033;
+  --portfolio-border: #334155;
+  --portfolio-text: #E5E7EB;
+  --portfolio-muted: #CBD5E1;
+  --portfolio-accent: #7DD3FC;
+  --portfolio-primary: #2563EB;
+  --portfolio-primary-hover: #1D4ED8;
+  --portfolio-success: #34D399;
 }
 
 html {
-  background: #0B1120;
+  background: var(--portfolio-bg);
   scroll-behavior: smooth;
 }
 
@@ -22,12 +36,21 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  background-color: #0B1120;
-  color: #e2e8f0;
+  background-color: var(--portfolio-bg);
+  color: var(--portfolio-text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+/* Primary actions: blue-600 / blue-700 pass white-text contrast better than the old sky CTA. */
+.bg-sky-600 {
+  background-color: var(--portfolio-primary) !important;
+}
+
+.hover\:bg-sky-500:hover {
+  background-color: var(--portfolio-primary-hover) !important;
 }
 
 button,
@@ -37,12 +60,12 @@ input {
 }
 
 :focus-visible {
-  outline: 2px solid #7dd3fc;
+  outline: 2px solid var(--portfolio-accent);
   outline-offset: 3px;
 }
 
 ::selection {
-  background: rgba(56, 189, 248, 0.35);
+  background: rgba(125, 211, 252, 0.28);
   color: white;
 }
 
