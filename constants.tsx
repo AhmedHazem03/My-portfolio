@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
   email: 'mailto:div.ahmedhazam@gmail.com',
   profilePic: 'https://avatars.githubusercontent.com/u/268745089?v=4',
   summary:
-    'Full-Stack Software Engineer focused on production business systems, operational dashboards, e-commerce platforms, and client portals. I combine a strong ASP.NET Core foundation with Next.js, TypeScript, Supabase/PostgreSQL, and practical product thinking to turn complex workflows into dependable software for real teams and customers.',
+    'Full-Stack Software Engineer who builds production business systems, operational dashboards, e-commerce platforms, and client portals. I combine an ASP.NET Core foundation with Next.js, TypeScript, Supabase/PostgreSQL, and product thinking to turn complex workflows into reliable, easy-to-use software.',
   socials: {
     github: 'https://github.com/AhmedHazem03',
     linkedin: 'https://www.linkedin.com/in/ahmed-hazem-235953369/',
@@ -160,6 +160,10 @@ export const SKILLS: SkillCategory[] = [
     skills: ['RLS', 'RBAC', 'JWT', 'Webhooks', 'Realtime Workflows', 'Role-Based Access', 'File Storage', 'Caching'],
   },
   {
+    name: 'AI-Assisted Engineering',
+    skills: ['OpenAI Codex', 'Claude', 'GitHub Copilot', 'ChatGPT', 'Code Review', 'Test Design', 'Technical Documentation'],
+  },
+  {
     name: 'Tooling & Delivery',
     skills: ['Git', 'GitHub', 'Vercel', 'Docker', 'Postman', 'Cloudinary', 'Cloudflare R2', 'Google Maps API'],
   },
@@ -197,9 +201,9 @@ export const SERVICES: Service[] = [
     icon: 'Shield',
   },
   {
-    title: 'Technical Problem Solving',
-    description: 'A structured engineering approach to debugging, legacy fixes, and difficult product constraints.',
-    features: ['System Diagnosis', 'Performance Reasoning', 'Clean Code Practices', 'Practical Trade-offs'],
+    title: 'AI-Assisted Engineering Workflow',
+    description: 'I use AI tools to accelerate focused engineering work while architecture, security, testing, and final decisions remain human-owned.',
+    features: ['OpenAI Codex & Claude', 'GitHub Copilot', 'Debugging & Test Design', 'Review & Validation'],
     icon: 'Server',
   },
 ];
